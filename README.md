@@ -1,13 +1,13 @@
 # Subnero Test
 Simple test for verifying that the pyhton API works with subnero modems
 
-#### Trasmitting
+### Trasmitting
 Simple test for verifying that the pyhton API (UnetSocket) works for sending and receiving data with subnero modems
 
-#### pubsub
+### pubsub
 Simple ROS2 program for testing publishing and subscribing to and from topics
 
-#### Sleep
+### Sleep
 Different strategies for trying to put subnero modem to sleep, ``modem_sleep.py`` works with ```phy << AddScheduledSleepReq()``` but you will have to manualy use the subnero browser interface to remove the sleep schedule that is set with the command
 
 
