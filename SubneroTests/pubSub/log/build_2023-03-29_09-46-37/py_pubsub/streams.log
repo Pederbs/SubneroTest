@@ -1,0 +1,23 @@
+[1.294s] Invoking command in '/home/peder/GitHub/Tests/pubSub/src/py_pubsub': PYTHONPATH=/home/peder/GitHub/Tests/pubSub/build/py_pubsub/prefix_override:/home/peder/GitHub/Tests/pubSub/install/py_pubsub/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/py_pubsub build --build-base /home/peder/GitHub/Tests/pubSub/build/py_pubsub/build install --record /home/peder/GitHub/Tests/pubSub/build/py_pubsub/install.log --single-version-externally-managed
+[1.808s] running egg_info
+[1.809s] writing ../../build/py_pubsub/py_pubsub.egg-info/PKG-INFO
+[1.810s] writing dependency_links to ../../build/py_pubsub/py_pubsub.egg-info/dependency_links.txt
+[1.810s] writing entry points to ../../build/py_pubsub/py_pubsub.egg-info/entry_points.txt
+[1.810s] writing requirements to ../../build/py_pubsub/py_pubsub.egg-info/requires.txt
+[1.810s] writing top-level names to ../../build/py_pubsub/py_pubsub.egg-info/top_level.txt
+[1.813s] reading manifest file '../../build/py_pubsub/py_pubsub.egg-info/SOURCES.txt'
+[1.814s] writing manifest file '../../build/py_pubsub/py_pubsub.egg-info/SOURCES.txt'
+[1.815s] running build
+[1.815s] running build_py
+[1.815s] running install
+[1.816s] running install_lib
+[1.818s] running install_data
+[1.819s] copying package.xml -> /home/peder/GitHub/Tests/pubSub/install/py_pubsub/share/py_pubsub
+[1.819s] running install_egg_info
+[1.822s] removing '/home/peder/GitHub/Tests/pubSub/install/py_pubsub/lib/python3.10/site-packages/py_pubsub-0.0.0-py3.10.egg-info' (and everything under it)
+[1.822s] Copying ../../build/py_pubsub/py_pubsub.egg-info to /home/peder/GitHub/Tests/pubSub/install/py_pubsub/lib/python3.10/site-packages/py_pubsub-0.0.0-py3.10.egg-info
+[1.823s] running install_scripts
+[1.859s] Installing listener script to /home/peder/GitHub/Tests/pubSub/install/py_pubsub/lib/py_pubsub
+[1.859s] Installing talker script to /home/peder/GitHub/Tests/pubSub/install/py_pubsub/lib/py_pubsub
+[1.859s] writing list of installed files to '/home/peder/GitHub/Tests/pubSub/build/py_pubsub/install.log'
+[1.895s] Invoked command in '/home/peder/GitHub/Tests/pubSub/src/py_pubsub' returned '0': PYTHONPATH=/home/peder/GitHub/Tests/pubSub/build/py_pubsub/prefix_override:/home/peder/GitHub/Tests/pubSub/install/py_pubsub/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/py_pubsub build --build-base /home/peder/GitHub/Tests/pubSub/build/py_pubsub/build install --record /home/peder/GitHub/Tests/pubSub/build/py_pubsub/install.log --single-version-externally-managed

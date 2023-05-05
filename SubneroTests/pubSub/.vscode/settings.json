@@ -1,0 +1,22 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/peder/GitHub/SUMS/install/sensor_thermometer/lib/python3.10/site-packages",
+        "/home/peder/GitHub/SUMS/install/sensor_salinity/lib/python3.10/site-packages",
+        "/home/peder/GitHub/SUMS/install/sensor_oxygen/lib/python3.10/site-packages",
+        "/home/peder/GitHub/SUMS/install/sensor_battery/lib/python3.10/site-packages",
+        "/home/peder/GitHub/SUMS/install/sensor_barometer/lib/python3.10/site-packages",
+        "/home/peder/GitHub/SUMS/install/sensor_interfaces/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/peder/GitHub/SUMS/install/sensor_thermometer/lib/python3.10/site-packages",
+        "/home/peder/GitHub/SUMS/install/sensor_salinity/lib/python3.10/site-packages",
+        "/home/peder/GitHub/SUMS/install/sensor_oxygen/lib/python3.10/site-packages",
+        "/home/peder/GitHub/SUMS/install/sensor_battery/lib/python3.10/site-packages",
+        "/home/peder/GitHub/SUMS/install/sensor_barometer/lib/python3.10/site-packages",
+        "/home/peder/GitHub/SUMS/install/sensor_interfaces/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}
