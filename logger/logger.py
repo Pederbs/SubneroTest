@@ -2,7 +2,8 @@ from unetpy import UnetSocket
 import csv
 import datetime
 
-sock = UnetSocket('192.168.42.86', 1100)
+sock = UnetSocket('localhost', 1102)
+#sock = UnetSocket('192.168.42.86', 1100)
 
 current_datetime = datetime.datetime.now().strftime("%d_%m_%Y__%H_%M_%S")
 file = "SUMS_logger_" + current_datetime + '.csv'

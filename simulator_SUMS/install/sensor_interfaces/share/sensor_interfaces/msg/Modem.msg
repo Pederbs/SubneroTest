@@ -1,1 +1,1 @@
-/home/peder/GitHub/simSUMS/src/sensor_interfaces/msg/Modem.msg
+/home/peder/GitHub/Tools/simulator_SUMS/src/sensor_interfaces/msg/Modem.msg
