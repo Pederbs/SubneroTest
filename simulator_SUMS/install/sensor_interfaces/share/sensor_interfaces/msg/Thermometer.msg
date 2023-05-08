@@ -1,1 +1,0 @@
-/home/peder/GitHub/Tools/simulator_SUMS/src/sensor_interfaces/msg/Thermometer.msg

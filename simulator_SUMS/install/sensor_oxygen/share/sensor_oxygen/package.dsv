@@ -1,9 +1,0 @@
-source;share/sensor_oxygen/hook/pythonpath.ps1
-source;share/sensor_oxygen/hook/pythonpath.dsv
-source;share/sensor_oxygen/hook/pythonpath.sh
-source;share/sensor_oxygen/hook/ament_prefix_path.ps1
-source;share/sensor_oxygen/hook/ament_prefix_path.dsv
-source;share/sensor_oxygen/hook/ament_prefix_path.sh
-source;../../build/sensor_oxygen/share/sensor_oxygen/hook/pythonpath_develop.ps1
-source;../../build/sensor_oxygen/share/sensor_oxygen/hook/pythonpath_develop.dsv
-source;../../build/sensor_oxygen/share/sensor_oxygen/hook/pythonpath_develop.sh
