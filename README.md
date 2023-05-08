@@ -1,7 +1,7 @@
 # Subnero Test
 Simple test for verifying that the pyhton API works with subnero modems
 
-### Trasmitting
+### tx_rx
 Simple test for verifying that the pyhton API (UnetSocket) works for sending and receiving data with subnero modems
 
 ### pubsub

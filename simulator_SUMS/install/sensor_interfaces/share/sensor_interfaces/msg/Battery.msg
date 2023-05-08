@@ -1,0 +1,1 @@
+/home/peder/GitHub/simSUMS/src/sensor_interfaces/msg/Battery.msg
