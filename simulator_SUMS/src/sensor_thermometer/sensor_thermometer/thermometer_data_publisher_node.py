@@ -14,12 +14,8 @@ class ThermometerDataPublisher(Node):
         self.sample_time  = self.declare_parameter('sample_time', 2.0).value  # Gets sample time as a parameter, default = 2
         self.timer = self.create_timer(self.sample_time, self.thermometer_read_and_publish)
 
-        # Assign the function TSYS01() in the tsys01.py to self.sensor
-        self.sensor = tsys01.TSYS01()
-        if not self.sensor.init():
-            # If sensor can not be detected
-            self.get_logger().error("Sensor could not be initialized")
-            exit(1)
+        self.j = 0
+        self.i = 1
 
     def thermometer_read_and_publish(self):
         # Custom thermometer message to publish. Can be found in the brov2_interfaces.
@@ -29,13 +25,8 @@ class ThermometerDataPublisher(Node):
         current_time = time.localtime()
         msg.local_time =  time.strftime("%H:%M:%S",current_time)
 
-        # Calls the function sensor.read in TSY01 to get the desired values from the sensors
-        if self.sensor.read():
-                msg.temperature_celsius     = self.sensor.temperature()                         # Default is degrees C (no arguments)
-                msg.temperature_farenheit   = self.sensor.temperature(tsys01.UNITS_Farenheit)   # Request Farenheit
-        else:
-                self.get_logger().error("Sensor read failed!")
-                exit(1)
+        self.j += self.i
+        self.j = msg.temperature_celsius
 
         # Publishing message and logging data sent over the topic /thermometer_data
         self.publisher_.publish(msg)

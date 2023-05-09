@@ -1,6 +1,4 @@
 from rclpy.node import Node
-
-from sensor_battery import ads1x15
 from sensor_interfaces.msg import Battery
 import time
 
@@ -24,11 +22,8 @@ class BatteryDataPublisher(Node):
         self.sample_time  = self.declare_parameter('sample_time', 2.0).value  # Gets sample time as a parameter, default = 2
         self.timer = self.create_timer(self.sample_time, self.battery_read_and_publish)
 
-        self.sensor = ads1x15.ADS1115()
-        
-        # Calculate the voltage and current constants
-        self.voltage_constant = (self.REFERENCE/self.MAX_VALUE)*11 
-        self.current_constant = (self.REFERENCE/self.MAX_VALUE - self.VOLTAGE_OFFSET) * self.CURRENT_SENSE
+        self.j = 0
+        self.i = 1
         
 
     def battery_read_and_publish(self):
@@ -39,17 +34,9 @@ class BatteryDataPublisher(Node):
         current_time = time.localtime()
         msg.local_time =  time.strftime("%H:%M:%S",current_time)
 
-        # Reads voltage and current from ADC and prints it every second
-        value = [self.sensor.read_adc(self.A0, gain=self.GAIN), 
-                 self.sensor.read_adc(self.A1, gain=self.GAIN)]
-
-        V = value[0]*self.voltage_constant + 0.6 # Adding 0.6 because it works
-        I = value[1]*self.current_constant
-        percent = 100/(self.MAX_BATTERY_VOLTAGE - self.MIN_BATTERY_VOLATAGE)*V-320
         
-        msg.battery_voltage = V
-        msg.battery_current = I
-        msg.battery_percent = percent
+        self.j += self.i
+        self.j = msg.battery_voltage
         #else:
         #    print("Sensor read failed!")
         #    exit(1)

@@ -5,8 +5,8 @@ from launch_ros.actions import Node
 sample_time = 10.0              # Sample time in seconds (float)
 n_sensors = 5                   # How many sensors that are in use
 transfer_delay = 6.0            # How long transferring data takes in seconds(float)
-modem_IP = '192.168.42.195'     # IP for the modem
-modem_port = 1100     # Port for the modem
+modem_IP = 'localhost'     # IP for the modem
+modem_port = 1101     # Port for the modem
 
 
 def generate_launch_description():
