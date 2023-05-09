@@ -2,7 +2,7 @@
 from rclpy.node import Node
 
 # tsys01 needed in order to utilize the BlueRobotics TSYS01 Python Library which must be installed
-#from sensor_thermometer import tsys01
+from sensor_thermometer import tsys01
 from sensor_interfaces.msg import Thermometer
 import time
 
@@ -14,8 +14,12 @@ class ThermometerDataPublisher(Node):
         self.sample_time  = self.declare_parameter('sample_time', 2.0).value  # Gets sample time as a parameter, default = 2
         self.timer = self.create_timer(self.sample_time, self.thermometer_read_and_publish)
 
-        self.i = 1.0
-        self.j = 0.0
+        # Assign the function TSYS01() in the tsys01.py to self.sensor
+        self.sensor = tsys01.TSYS01()
+        if not self.sensor.init():
+            # If sensor can not be detected
+            self.get_logger().error("Sensor could not be initialized")
+            exit(1)
 
     def thermometer_read_and_publish(self):
         # Custom thermometer message to publish. Can be found in the brov2_interfaces.
@@ -25,9 +29,13 @@ class ThermometerDataPublisher(Node):
         current_time = time.localtime()
         msg.local_time =  time.strftime("%H:%M:%S",current_time)
 
-        
-        self.j += self.i
-        msg.temperature_celsius = self.j
+        # Calls the function sensor.read in TSY01 to get the desired values from the sensors
+        if self.sensor.read():
+                msg.temperature_celsius     = self.sensor.temperature()                         # Default is degrees C (no arguments)
+                msg.temperature_farenheit   = self.sensor.temperature(tsys01.UNITS_Farenheit)   # Request Farenheit
+        else:
+                self.get_logger().error("Sensor read failed!")
+                exit(1)
 
         # Publishing message and logging data sent over the topic /thermometer_data
         self.publisher_.publish(msg)
