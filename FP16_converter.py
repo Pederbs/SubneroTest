@@ -28,7 +28,9 @@ class Converter():
             user_input = converted_list
 
         new_val = [Converter.FP16_to_bytes(a) for a in user_input]
-        return new_val
+        flattened_list = [num for tup in new_val for num in tup]
+        return flattened_list
+
       
     
     def FP16_to_bytes(user_input):
