@@ -1,6 +1,7 @@
 import catlas01
 import doatlas01 
 import datetime
+import time
 import csv
 
 # Create a .csv file to log data
@@ -19,6 +20,7 @@ choise = input('Choose what sensor to use (doatlas/catlas)')
 ok = True           # Answer is as expected
 salinity = None     # It is the salinity sensor
 data = 0.0
+T = 0.5             # Sample time
 
 while ok:
     if choise == 'doatlas':
@@ -46,4 +48,5 @@ while True:
     with open(file, 'a', newline='') as csv_file:
                 writer = csv.writer(csv_file, delimiter=';')
                 writer.writerow([data])
+    time.sleep(T)
     
