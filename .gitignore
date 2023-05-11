@@ -2,3 +2,6 @@ simulator_SUMS/build
 simulator_SUMS/install
 simulator_SUMS/log
 simulator_SUMS/.vscode
+simulator_SUMS/log_data/internal
+simulator_SUMS/log_data/external
+logger/logs
