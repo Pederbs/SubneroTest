@@ -1,4 +1,4 @@
-import doatlas01 
+from lib import doatlas01 
 import datetime
 import time
 import csv
