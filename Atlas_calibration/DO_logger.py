@@ -15,7 +15,7 @@ with open(file, 'w', newline='') as csv_file:
     writer.writerow([header])
 
 data = 0.0
-T = 0.5             # Sample time
+T = 1.5             # Sample time
 
 sensor = doatlas01.DOATLAS01()
 print('Reading from Dissolved Oxugen sensor every %0.2f sec' % T)
@@ -23,6 +23,7 @@ print('Reading from Dissolved Oxugen sensor every %0.2f sec' % T)
 while True:
     sensor.read()
     data = sensor._oxygen
+    print(data)
 
     with open(file, 'a', newline='') as csv_file:
                 writer = csv.writer(csv_file, delimiter=';')
