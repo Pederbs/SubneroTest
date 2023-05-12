@@ -3,6 +3,10 @@ import datetime
 import time
 import csv
 
+# Constants
+T = 0.5         # Sample time
+mT = 0.5        # Minimum sample time
+
 # Create a .csv file to log data
 current_datetime = datetime.datetime.now().strftime("%d_%m_%Y__%H_%M_%S")
 directory = 'logs/'
@@ -13,10 +17,6 @@ header = 'reading'
 with open(file, 'w', newline='') as csv_file:
     writer = csv.writer(csv_file, delimiter=';')
     writer.writerow([header])
-
-data = 0.0
-T = 1.5             # Sample time
-mT = 0.5
 
 sensor = doatlas01.DOATLAS01()
 if not sensor.init():
