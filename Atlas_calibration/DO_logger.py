@@ -16,11 +16,13 @@ with open(file, 'w', newline='') as csv_file:
 
 data = 0.0
 T = 1.5             # Sample time
+mT = 0.5
 
 sensor = doatlas01.DOATLAS01()
 print('Reading from Dissolved Oxugen sensor every %0.2f sec' % T)
-if T < 1.5:
-       print('Lowest sample time is 1.5, reverting to it')
+if T < mT:
+       print('Lowest sample time is %0.2f?, reverting to it' % mT)
+
 
 while True:
     sensor.read()
