@@ -19,6 +19,13 @@ T = 0.5             # Sample time
 mT = 0.5
 
 sensor = catlas01.CATLAS01()
+if not sensor.init():
+    # If sensor can not be detected
+    print("[ERROR] Sensor could not be initialized")
+    exit(1)
+
+print('Sensor initialized successfully')
+
 print('Reading from Conductivity sensor every %0.2f sec' % T)
 if T < mT:
        print('Lowest sample time is %0.2f?, reverting to it' % mT)

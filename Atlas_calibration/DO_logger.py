@@ -24,6 +24,8 @@ if not sensor.init():
     print("[ERROR] Sensor could not be initialized")
     exit(1)
 
+print('Sensor initialized successfully')
+
 print('Reading from Dissolved Oxygen sensor every %0.2f sec' % T)
 if T < mT:
        print('Lowest sample time is %0.2f?, reverting to it' % mT)
