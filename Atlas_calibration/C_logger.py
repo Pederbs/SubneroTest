@@ -33,7 +33,7 @@ if T < mT:
 while True:
     sensor.read()
     data = sensor._salinity
-    print(data)
+    print('%0.2f' % data)
 
     with open(file, 'a', newline='') as csv_file:
                 writer = csv.writer(csv_file, delimiter=';')
