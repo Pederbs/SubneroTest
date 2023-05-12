@@ -19,6 +19,8 @@ T = 1.5             # Sample time
 
 sensor = doatlas01.DOATLAS01()
 print('Reading from Dissolved Oxugen sensor every %0.2f sec' % T)
+if T < 1.5:
+       print('Lowest sample time is 1.5, reverting to it')
 
 while True:
     sensor.read()

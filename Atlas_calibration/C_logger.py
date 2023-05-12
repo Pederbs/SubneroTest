@@ -19,10 +19,13 @@ T = 0.5             # Sample time
 
 sensor = catlas01.CATLAS01()
 print('Reading from Conductivity sensor every %0.2f sec' % T)
+if T < 1.5:
+       print('Lowest sample time is 1.5, reverting to it')
 
 while True:
     sensor.read()
     data = sensor._salinity
+    print(data)
 
     with open(file, 'a', newline='') as csv_file:
                 writer = csv.writer(csv_file, delimiter=';')
