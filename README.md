@@ -28,3 +28,19 @@ functions that allow conversion form float numbers to graycode of a given bit si
 # float16_converter
 Forked from [https://github.com/Brovidius/FP16_converter](https://link-url-here.org)
 Also includes a test script to verify that it works
+
+# logger
+`logger.py` uses the `UnetSocket` module to listen for incoming data from a specific IP address and port. The received data is then written to a CSV log file, including the modem ID, time, depth, voltage, oxygen, salinity, and temperature. The log file is named with the current date and time. The code runs in an infinite loop until terminated manually. Once the program is terminated, the socket is closed. The IP address and port number can be changed to listen to different sources of data.
+
+`plotter.ipynb` reads a CSV log file, manipulates and visualizes the data using the pandas and matplotlib libraries. It plots the voltage and current over time, and also combines and plots the raw voltage and current measurements from different sources. These visualizations can provide insights and identify patterns in the collected data.
+
+# Atlas_calibration
+Contains files for calibration dissolved oxygen and conductivity sensor from atlas scientific. It also contains a `ReadMe.md` to give a walkthrough on calibrating the sensors. There are files for logging data from the sensors to a .csv file for later visualization
+
+soon to come programs for calibrating sensors both via UART and I2C
+
+## plotter
+Visualization of data from tests in scienceplot
+
+# simulator_SUMS
+quick simulator for running SUMS on devices that do not have i2c capabilities
