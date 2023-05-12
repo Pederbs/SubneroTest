@@ -19,7 +19,12 @@ T = 1.5             # Sample time
 mT = 0.5
 
 sensor = doatlas01.DOATLAS01()
-print('Reading from Dissolved Oxugen sensor every %0.2f sec' % T)
+if not sensor.init():
+    # If sensor can not be detected
+    print("[ERROR] Sensor could not be initialized")
+    exit(1)
+
+print('Reading from Dissolved Oxygen sensor every %0.2f sec' % T)
 if T < mT:
        print('Lowest sample time is %0.2f?, reverting to it' % mT)
 
