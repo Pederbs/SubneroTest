@@ -1,5 +1,7 @@
 # How to calibrate the Atlas Scientific sensors with the Ubuntu server RPi
 
+## UART
+
 I am doing this on a brand new RPi so i first ran 
 ```
 sudo apt-get update
@@ -77,12 +79,26 @@ When the readings stabalize, type in "Cal".
 Open the zero dissolved oxygen pouch and dip the sensor in the solution.
 Wait until the sensor readings stabalize and type in "Cal,0"
 
-
-
-# Change communication from I2C to UART
+### Change communication from I2C to UART
 short SDA and PGND 
-
 refer to page 62 of DO_EZO_Datasheet
+
+or run command `I2C,97` in the urat.py program
+
+## I2C
+Attempted i2c calibration after UART calibration was successful due to having a script that is easier to work with in i2c
+
+ran the commands:
+```
+# sudo apt-get install python3-smbus
+sudo apt-get install python-smbus
+sudo apt-get install i2c-tools
+```
+opened `uart.py` and ran `I2C,97` for (DO) and had to rewire the connection
+
+this seemed to work better
+
+
 
 
 ## fra tidligere gruppe 
