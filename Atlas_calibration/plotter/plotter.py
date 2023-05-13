@@ -7,19 +7,25 @@ import scienceplots
 plt.style.use(['science', 'no-latex'])
 
 path = os.getcwd()
-file_fresh = 'DO_test_fresh_water.csv'
-file_salt = 'DO_test_salt_water.csv'
+file_fresh = 'DO_fresh_test_1305.csv'
+file_salt = 'DO_salt_test_1305.csv'
 
-df_fresh = pd.read_csv(path + '/Atlas_calibration/plotter/files/' + file_fresh)
-df_salt = pd.read_csv(path + '/Atlas_calibration/plotter/files/' + file_salt)
+df_fresh = pd.read_csv(path + '/Atlas_calibration/plotter/files/rpi/' + file_fresh)
+df_salt = pd.read_csv(path + '/Atlas_calibration/plotter/files/rpi/' + file_salt)
 
 
-df_salt_fixed = df_salt.drop(df_salt.index[:195])
+df_salt_fixed = df_salt.drop(df_salt.index[:150])
 df_salt_fixed = df_salt_fixed.reset_index(drop=True)
 
+df_fresh_fixed = df_fresh.drop(df_fresh.index[:150])
+df_fresh_fixed = df_fresh_fixed.reset_index(drop=True)
+
 fig, ax = plt.subplots()
-ax.plot(df_fresh, label='Fresh water')
-ax.plot(df_salt_fixed, label='Salt water')
+# ax.plot(df_fresh_fixed['reading'], label='Fresh water')
+# ax.plot(df_salt_fixed['reading'], label='Salt water')
+
+ax.plot(df_fresh['reading'], label='Fresh water')
+ax.plot(df_salt['reading'], label='Salt water')
 
 ax.legend(loc='upper right')
 

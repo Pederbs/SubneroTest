@@ -4,11 +4,8 @@ import time
 import csv
 
 # Constants
-T = 0.5         # Sample time
+T = 0.1         # Sample time
 mT = 1.5        # Minimum sample time
-test_time_minutes = 10
-
-samples = test_time_minutes * 60 / T
 
 
 # Create a .csv file to log data
@@ -35,7 +32,7 @@ if T < mT:
        print('Lowest sample time is %0.2f, reverting to it' % mT)
 
 
-for i in range(samples):
+while True:
     sensor.read()
     value = sensor._oxygen
     print('Sample: %i, %0.2f' % (i,value))
