@@ -14,7 +14,7 @@ df_fresh = pd.read_csv(path + '/Atlas_calibration/plotter/files/' + file_fresh)
 df_salt = pd.read_csv(path + '/Atlas_calibration/plotter/files/' + file_salt)
 
 
-df_salt_fixed = df_salt.drop(df_salt.index[:190])
+df_salt_fixed = df_salt.drop(df_salt.index[:195])
 df_salt_fixed = df_salt_fixed.reset_index(drop=True)
 
 fig, ax = plt.subplots()
