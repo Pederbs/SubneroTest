@@ -117,3 +117,11 @@ Du kommer da til en meny der du navigerer først til "Interfacing options" --> "
 
 prøvde å koke litt vann og blande det ut med kalt vann så det ble litt mer enn lunket og hadde en skål med kalt vann, prøvde å dyppe proben ned i begge uten noe spesielt hell
 Vil si at testen var inconclusive
+
+# Conductivity sensor
+
+put it in i2c mode and run `i2c.py`
+confirm that the sensor is correct by writing `K,n (where n = sensor type ie. (1.0 (default) or 0.1))`
+i wrote `K,1.0`
+do a dry calibration, they say it is nessesary `Cal,dry`
+if you `Poll,1` now you should see the value 0.00
