@@ -41,7 +41,7 @@ print('Reading from Dissolved Oxygen sensor every %0.2f sec' % T)
 #        print('Lowest sample time is %0.2f, reverting to it' % mT)
 
 i = 0
-while i <= 600:     # Sample time 1 sec
+while i <= 500:     # Sample time 1 sec
     DO_sensor.read()
     DO_value = DO_sensor._oxygen
 
