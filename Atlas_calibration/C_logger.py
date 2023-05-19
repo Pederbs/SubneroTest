@@ -1,10 +1,10 @@
 from lib import catlas01
 import datetime
-import time
+# import time
 import csv
 
 # Constants
-T = 0.5         # Sample time
+T = 1           # Sample time
 mT = 1.5        # Minimum sample time
 
 # Create a .csv file to log data
@@ -27,10 +27,11 @@ if not sensor.init():
 print('Sensor initialized successfully')
 
 print('Reading from Conductivity sensor every %0.2f sec' % T)
-if T < mT:
-       print('Lowest sample time is %0.2f, reverting to it' % mT)
+# if T < mT:
+#        print('Lowest sample time is %0.2f, reverting to it' % mT)
 
-while True:
+i = 0
+while i <= 600:     # Sample time 1
     sensor.read()
     value = sensor._salinity
     print('%0.2f' % value)
@@ -43,4 +44,4 @@ while True:
     with open(file, 'a', newline='') as csv_file:
                 writer = csv.writer(csv_file, delimiter=';')
                 writer.writerow([data])
-    time.sleep(T)
+    i = i + 1
