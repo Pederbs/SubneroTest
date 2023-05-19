@@ -13,7 +13,8 @@ T = 1             # Sample time
 # Create a .csv file to log data
 current_datetime = datetime.datetime.now().strftime("%d_%m_%Y__%H_%M_%S")
 directory = 'logs/'
-file = directory + 'DO_LOG_' + current_datetime + '.csv'
+# file = directory + 'ALL_LOG_' + current_datetime + '.csv'
+file = directory + 'ALL_LOG.csv'
 header = 'DO,C,time'
 
 # Open the .csv file and put the header
