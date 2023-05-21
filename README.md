@@ -29,7 +29,7 @@ functions that allow conversion form float numbers to graycode of a given bit si
 Forked from [https://github.com/Brovidius/FP16_converter](https://link-url-here.org)
 Also includes a test script to verify that it works
 
-# logger
+# Subnero_logger
 `logger.py` uses the `UnetSocket` module to listen for incoming data from a specific IP address and port. The received data is then written to a CSV log file, including the modem ID, time, depth, voltage, oxygen, salinity, and temperature. The log file is named with the current date and time. The code runs in an infinite loop until terminated manually. Once the program is terminated, the socket is closed. The IP address and port number can be changed to listen to different sources of data.
 
 `plotter.ipynb` reads a CSV log file, manipulates and visualizes the data using the pandas and matplotlib libraries. It plots the voltage and current over time, and also combines and plots the raw voltage and current measurements from different sources. These visualizations can provide insights and identify patterns in the collected data.
