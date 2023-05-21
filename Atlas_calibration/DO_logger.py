@@ -1,7 +1,7 @@
 from lib import doatlas01 
 import datetime
-# import time
 import csv
+import os
 
 # Constants
 T = 1             # Sample time
@@ -9,10 +9,16 @@ T = 1             # Sample time
 
 
 # Create a .csv file to log data
-current_datetime = datetime.datetime.now().strftime("%d_%m_%Y__%H_%M_%S")
-directory = 'logs/'
-file = directory + 'DO_LOG_' + current_datetime + '.csv'
+# current_datetime = datetime.datetime.now().strftime("%d_%m_%Y__%H_%M_%S")
+current_date = datetime.datetime.now().strftime("%d_%m_%Y")
+current_time = datetime.datetime.now().strftime("%H_%M_%S")
+directory = 'logs/' + current_date + '/'
+
+file = directory + 'DO_LOG_' + current_time + '.csv'
 header = 'reading,time'
+
+if not os.path.exists(directory):
+    os.makedirs(directory)
 
 # Open the .csv file and put the header
 with open(file, 'w', newline='') as csv_file:

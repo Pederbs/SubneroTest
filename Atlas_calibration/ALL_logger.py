@@ -2,7 +2,7 @@ from lib import doatlas01
 from lib import catlas01
 import datetime
 import datetime
-# import time
+import os
 import csv
 
 # Constants
@@ -11,11 +11,14 @@ T = 1             # Sample time
 
 
 # Create a .csv file to log data
-current_datetime = datetime.datetime.now().strftime("%d_%m_%Y__%H_%M_%S")
-directory = 'logs/'
-# file = directory + 'ALL_LOG_' + current_datetime + '.csv'
-file = directory + 'ALL_LOG.csv'
+current_date = datetime.datetime.now().strftime("%d_%m_%Y")
+current_time = datetime.datetime.now().strftime("%H_%M_%S")
+directory = 'logs/' + current_date + '/'
+file = directory + 'ALL_LOG_' + current_time + '.csv'
 header = 'DO,C,time'
+
+if not os.path.exists(directory):
+    os.makedirs(directory)
 
 # Open the .csv file and put the header
 with open(file, 'w', newline='') as csv_file:
