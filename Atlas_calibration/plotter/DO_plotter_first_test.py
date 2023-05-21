@@ -50,6 +50,6 @@ plt.grid()
 plt.xlabel('Samples')
 plt.ylabel('Salinity [mg/l]')
 
-plt.savefig("Super_salt_test.png", dpi = 500)
+plt.savefig("pictures/Super_salt_test.png", dpi = 500)
 plt.show()
 

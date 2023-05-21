@@ -6,3 +6,4 @@ simulator_SUMS/log_data/internal
 simulator_SUMS/log_data/external
 logger/logs
 float16_converter/FP16_converter
+pictures/

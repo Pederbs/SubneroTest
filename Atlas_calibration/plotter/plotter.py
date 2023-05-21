@@ -36,6 +36,6 @@ ax.legend(loc='upper right')
 # df_all['salt'] = df_salt
 # df_all.plot()
 # plt.tight_layout()
-# plt.savefig("test.png", dpi = 500)
+# plt.savefig("pictures/test.png", dpi = 500)
 
 plt.show()

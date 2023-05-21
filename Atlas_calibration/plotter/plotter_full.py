@@ -60,21 +60,21 @@ plt.plot(df_fresh1['reading'], label='Fresh water')
 plt.plot(df_salt1['reading'], label='Salt water')
 plt.legend(loc='upper right')
 plt.tight_layout()
-plt.savefig("3Vpump.png", dpi = 500)
+plt.savefig("pictures/3Vpump.png", dpi = 500)
 
 # Figure 2
 plt.figure(figsize=in_text)
 plt.plot(df_fresh2['reading'], label='Fresh water')
 plt.plot(df_salt2['reading'], label='Salt water')
 plt.legend(loc='upper right')
-plt.savefig("NOpump.png", dpi = 500)
+plt.savefig("pictures/NOpump.png", dpi = 500)
 
 # Figure 3
 plt.figure(figsize=in_text)
 plt.plot(df_fresh3['reading'], label='Fresh water')
 plt.plot(df_salt3['reading'], label='Salt water')
 plt.legend(loc='lower right')
-plt.savefig("1.7Vpump.png", dpi = 500)
+plt.savefig("pictures/1.7Vpump.png", dpi = 500)
 
 # plt.plot(df_salinity2['reading'], label='salinity of fresh water')
 # plt.plot(df_salinity3['reading'], label='salinity of salt water')
@@ -93,7 +93,7 @@ axs[1].plot(df_salt3['reading'], label='1.7V pump')
 
 axs[0].legend(loc='lower left')
 axs[1].legend(loc='lower left')
-fig.savefig('allpump.png', dpi=500)
+fig.savefig('pictures/allpump.png', dpi=500)
 
 
 
@@ -103,7 +103,7 @@ plt.plot(df_air1['reading'], label='Before all tests')
 plt.plot(df_air2['reading'], label='After fresh water')
 plt.plot(df_air3['reading'], label='After salt water')
 plt.legend(loc='lower right')
-plt.savefig("air.png", dpi = 500)
+plt.savefig("pictures/air.png", dpi = 500)
 
 # plt.tight_layout()
 # plt.savefig("test.png", dpi = 500)
